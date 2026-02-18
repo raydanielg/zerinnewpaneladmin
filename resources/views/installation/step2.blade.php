@@ -61,7 +61,10 @@
                     </div>
                 </div>
 
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+                    <a href="{{ route('step3',['token'=>bcrypt('step_3')]) }}" class="btn btn-outline-dark px-sm-5">
+                        {{translate('Skip')}}
+                    </a>
                     <button type="submit" class="btn btn-dark px-sm-5">{{translate('Continue')}}</button>
                 </div>
             </form>

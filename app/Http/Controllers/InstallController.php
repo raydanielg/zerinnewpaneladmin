@@ -120,6 +120,9 @@ class InstallController extends Controller
             'purchase_key' => 'required|regex:/^\S*$/u',
         ]);
 
+        session()->put('username', str_replace(' ', '_', $request['username']));
+        session()->put('purchase_key', str_replace(' ', '', $request['purchase_key']));
+
         $this->setEnvironmentValue('SOFTWARE_ID', 'MTAwMDAwMDA=');
         $this->setEnvironmentValue('BUYER_USERNAME', $request['username']);
         $this->setEnvironmentValue('PURCHASE_CODE', $request['purchase_key']);
@@ -246,6 +249,9 @@ Parcel ID is {ParcelId} You can track this parcel from this link {TrackingLink}"
             // Remove www.
             $url = preg_replace('/^www\./', '', $url);
             $key = base64_encode(random_bytes(32));
+
+            $purchaseKey = session('purchase_key', '');
+            $username = session('username', '');
             $output = 'APP_NAME=DriveMond' . time() . '
                     APP_ENV=live
                     APP_MODE=live
@@ -306,8 +312,8 @@ Parcel ID is {ParcelId} You can track this parcel from this link {TrackingLink}"
                     MIX_REVERB_PORT="${REVERB_PORT}"
                     MIX_REVERB_SCHEME="${REVERB_SCHEME}"
 
-                    PURCHASE_CODE=' . session('purchase_key') . '
-                    BUYER_USERNAME=' . session('username') . '
+                    PURCHASE_CODE=' . $purchaseKey . '
+                    BUYER_USERNAME=' . $username . '
                     SOFTWARE_ID=MTAwMDAwMDA=
 
                     SOFTWARE_VERSION=3.0

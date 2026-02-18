@@ -39,7 +39,7 @@
                 <div class="footer-logo">
                     <img src="{{dynamicAsset('public/assets/installation')}}/assets/img/logo.svg" width="150" alt="">
                 </div>
-                <p class="copyright-text mb-0">© {{date("Y")}} | {{translate('All Rights Reserved')}}</p>
+                <p class="copyright-text mb-0">© {{date("Y")}} Zerixa Technologies | {{translate('All Rights Reserved')}}</p>
             </div>
         </footer>
     </div>

@@ -59,7 +59,7 @@ class BusinessSettingService extends BaseService implements BusinessSettingServi
                 ->findOneBy(criteria: ['key_name' => $key, 'settings_type' => BUSINESS_INFORMATION]);
             $images = ['header_logo', 'favicon', 'preloader', 'footer_logo'];
             if (in_array($key, $images)) {
-                $value = fileUploader('business/', APPLICATION_IMAGE_FORMAT, $data[$key], $businessInfo->value ?? '');
+                $value = fileUploader('business/', APPLICATION_IMAGE_FORMAT, $data[$key], $businessInfo?->value ?? '');
             }
 
             $value == 'on' ? $value = 1 : null;

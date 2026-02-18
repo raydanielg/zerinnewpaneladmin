@@ -636,7 +636,6 @@
                                                             <div class="mb-4">
                                                                 <label for="" class="fw-medium mb-2">
                                                                     {{ translate('Business_Logo') }}
-                                                                    <span class="text-danger">*</span>
                                                                     <i class="bi bi-info-circle-fill text-primary cursor-pointer"
                                                                        data-bs-toggle="tooltip"
                                                                        title="{{translate('upload_your_main_brand_logo._this_will_appear_in_the_website_header,_dashboard,_and_key_brand_areas_across_the_platform.')}}"></i>
@@ -652,7 +651,6 @@
                                                                            class="upload-file__input"
                                                                            accept=".png" tabindex="26"
                                                                            data-max-upload-size="{{ readableUploadMaxFileSize('image') }}"
-                                                                            {{ $settings?->firstWhere('key_name', 'header_logo')?->value ? '' : 'required' }}
                                                                     >
                                                                     <span
                                                                             class="edit-btn {{ $settings?->firstWhere('key_name', 'header_logo')?->value ? 'show' : '' }}">
@@ -698,7 +696,6 @@
                                                             <div class="mb-4">
                                                                 <label for="" class="fw-medium mb-2">
                                                                     {{ translate('Website_Favicon') }}
-                                                                    <span class="text-danger">*</span>
                                                                     <i class="bi bi-info-circle-fill text-primary cursor-pointer"
                                                                        data-bs-toggle="tooltip"
                                                                        title="{{translate('upload_a_small_icon_(usually_16×16_or_32×32_px)_that_appears_on_browser_tabs_and_bookmarks_for_brand_recognition.')}}"></i>
@@ -715,7 +712,7 @@
                                                                            class="upload-file__input"
                                                                            accept=".png" tabindex="27"
                                                                            data-max-upload-size="{{ readableUploadMaxFileSize('image') }}"
-                                                                            {{ $settings?->firstWhere('key_name', 'favicon')?->value ? '' : 'required' }}>
+                                                                    >
                                                                     <span
                                                                             class="edit-btn {{ $settings?->firstWhere('key_name', 'favicon')?->value ? 'show' : '' }}">
                                                                         <img
@@ -760,7 +757,6 @@
                                                             <div class="mb-4">
                                                                 <label for="" class="fw-medium mb-2">
                                                                     {{ translate('Website_Footer_logo') }}
-                                                                    <span class="text-danger">*</span>
                                                                     <i class="bi bi-info-circle-fill text-primary cursor-pointer"
                                                                        data-bs-toggle="tooltip"
                                                                        title="{{translate('upload_the_logo_displayed_in_the_footer_area_of_your_website._usually_a_simplified_or_monochrome_version_of_your_main_logo.')}}"></i>
@@ -777,7 +773,6 @@
                                                                            class="upload-file__input"
                                                                            accept=".png" tabindex="28"
                                                                            data-max-upload-size="{{ readableUploadMaxFileSize('image') }}"
-                                                                            {{ $settings?->firstWhere('key_name', 'footer_logo')?->value ? '' : 'required' }}
                                                                     >
                                                                     <span
                                                                             class="edit-btn {{ $settings?->firstWhere('key_name', 'footer_logo')?->value ? 'show' : '' }}">
@@ -825,7 +820,6 @@
                                                             <div class="mb-4">
                                                                 <label for="" class="fw-medium mb-2">
                                                                     {{ translate('Loading_gif') }}
-                                                                    <span class="text-danger">*</span>
                                                                     <i class="bi bi-info-circle-fill text-primary cursor-pointer"
                                                                        data-bs-toggle="tooltip"
                                                                        title="{{translate('upload_a_loading_animation_(gif_format)_that_will_appear_while_pages_or_ride_details_are_loading,_enhancing_user_experience.')}}"></i>
@@ -842,7 +836,6 @@
                                                                            class="upload-file__input" accept=".gif"
                                                                            tabindex="29"
                                                                            data-max-upload-size="{{ readableUploadMaxFileSize('image') }}"
-                                                                            {{ $settings?->firstWhere('key_name', 'preloader')?->value ? '' : 'required' }}
                                                                     >
                                                                     <span
                                                                             class="edit-btn {{ $settings?->firstWhere('key_name', 'preloader')?->value ? 'show' : '' }}">

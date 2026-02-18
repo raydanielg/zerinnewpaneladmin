@@ -6,7 +6,7 @@
     @php($favicon = getSession('favicon'))
     @php($preloader = getSession('preloader'))
     <!-- Page Title -->
-    <title>VZR | {{ translate('admin_login') }}</title>
+    <title>{{ translate('admin_login') }}</title>
     <!-- Meta Data -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
@@ -93,7 +93,7 @@
                 <div class="login-right w-100 m-auto px-0 pb-{{ env('APP_MODE') == 'demo' ? '3' : '5' }}">
                     <div class="inner-div px-4">
                         <div class="text-center mb-30">
-                            <h2 class="text-uppercase mb-3">VZR</h2>
+                            <h2 class="text-uppercase mb-3">{{ businessConfig('business_name')->value ?? null }}</h2>
                             <h3 class="mb-2">{{ translate('Sign_In') }}</h3>
                             <p class="opacity-75">{{ translate('sign_in_to_stay_connected') }}
                             </p>
